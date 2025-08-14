@@ -24,11 +24,11 @@ const merge = (arr1, arr2) => {
       mergedArray = mergedArray.concat(slicedArray);
       console.log("sliced Array 1");
     }
-    else if (j === arr2.length - 1) {
-      const slicedArray = arr2.slice(i);
+    else if (j === arr2.length) {
+      const slicedArray = arr1.slice(i);
       mergedArray = mergedArray.concat(slicedArray);
-      console.log("sliced Array 2");
-    }
+      console.log("sliced Array 1");
+    };
   }
   console.log(mergedArray);
 }
