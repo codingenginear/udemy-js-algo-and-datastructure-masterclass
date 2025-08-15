@@ -35,7 +35,9 @@ const merge = (arr1, arr2) => {
       console.log("sliced Array 1");
     };
   }
+
   console.log(mergedArray);
+  return mergedArray;
 }
 
 merge(sortedArray3, sortedArray4);
