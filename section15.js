@@ -10,7 +10,7 @@ const sortedArray2 = [3, 6, 10, 14];
 const sortedArray3 = [1, 4, 5, 8, 15];
 const sortedArray4 = [3, 6, 10, 14, 19, 20];
 
-const merge = (arr1, arr2) => {
+const mergeFor = (arr1, arr2) => {
   var mergedArray = [];
   var j = 0;
 
@@ -36,8 +36,40 @@ const merge = (arr1, arr2) => {
     };
   }
 
-  console.log(mergedArray);
+  console.log('For Loop Implementation: ', mergedArray);
   return mergedArray;
 }
 
-merge(sortedArray3, sortedArray4);
+mergeFor(sortedArray3, sortedArray4);
+
+
+// Tutorial Implementation
+// Section 15: Merging Arrays function: Implementation 
+// Video: 89
+
+// Merges two already sorted arrays
+function mergeWhile(arr1, arr2){
+    let results = [];
+    let i = 0;
+    let j = 0;
+    while(i < arr1.length && j < arr2.length){
+        if(arr2[j] > arr1[i]){
+            results.push(arr1[i]);
+            i++;
+        } else {
+            results.push(arr2[j])
+            j++;
+        }
+    }
+    while(i < arr1.length) {
+        results.push(arr1[i])
+        i++;
+    }
+    while(j < arr2.length) {
+        results.push(arr2[j])
+        j++;
+    }
+    console.log('While Loop implementation: ', results);
+    return results;
+}
+mergeWhile([100,200], [1,2,3,5,6])
