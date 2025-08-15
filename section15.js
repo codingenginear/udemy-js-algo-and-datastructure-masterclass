@@ -2,8 +2,13 @@
 
 // My attempt at creating the merge function of the merge sort algorithm
 
+// First array set with array 1 being larger
 const sortedArray1 = [1, 4, 5, 8, 11, 20];
 const sortedArray2 = [3, 6, 10, 14];
+
+// Second array set with array 2 being larger
+const sortedArray3 = [1, 4, 5, 8, 15];
+const sortedArray4 = [3, 6, 10, 14, 19, 20];
 
 const merge = (arr1, arr2) => {
   var mergedArray = [];
@@ -33,4 +38,4 @@ const merge = (arr1, arr2) => {
   console.log(mergedArray);
 }
 
-merge(sortedArray1, sortedArray2);
+merge(sortedArray3, sortedArray4);
