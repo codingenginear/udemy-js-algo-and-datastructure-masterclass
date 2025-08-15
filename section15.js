@@ -103,11 +103,17 @@ function merge(arr1, arr2){
 
 // Recrusive Merge Sort
 function mergeSort(arr){
-    if(arr.length <= 1) return arr;
-    let mid = Math.floor(arr.length/2);
-    let left = mergeSort(arr.slice(0,mid));
-    let right = mergeSort(arr.slice(mid));
-    return merge(left, sright);
-}
+  if(arr.length <= 1) return arr;
+  let mid = Math.floor(arr.length/2);
+  console.log('Midpoint: ', mid);
 
-mergeSort([10,24,76,73])
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+
+  console.log('Left: ', left, 'Right: ', right);
+  return merge(left, right);
+};
+
+console.log(mergeSort([10, 24, 76, 73]));
+// console.log(mergeSort([5, 50, 20, 25, 31, 18, 200]));
+
