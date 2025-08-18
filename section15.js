@@ -148,3 +148,27 @@ function mergeSort(arr){
 console.log(mergeSort([10, 24, 76, 73]));
 // console.log(mergeSort([5, 50, 20, 25, 31, 18, 200]));
 
+
+
+
+
+// Building comparator functions to pass into the merge function as a helper to determine which merge order we want to choose (asc || desc for numbers or str/arr/obj length)
+const comparator = (a, b, compare) => {
+  switch (compare) {
+    case 'asc':
+      return a - b
+      break;
+    
+    case 'desc':
+      return b - a
+      break;
+
+    case 'ascLength': 
+      return a.length - b.length
+      break;
+
+    case 'descLength':
+    return b.length - a.length
+    break; 
+  }
+};
