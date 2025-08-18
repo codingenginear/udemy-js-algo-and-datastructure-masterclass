@@ -9,39 +9,70 @@ const sortedArray2 = [3, 6, 10, 14];
 const sortedArray3 = [1, 4, 5, 8, 15];
 const sortedArray4 = [3, 6, 10, 14, 19, 20];
 
-// const mergeFor = (arr1, arr2) => {
-//   var mergedArray = [];
-//   var j = 0;
-//   for (let i = 0; i < arr1.length && j < arr2.length; i++) {
-//     if (arr1[i] < arr2[j]) {
-//       mergedArray.push(arr1[i]);
-//     }
-//     else if (arr1[i] > arr2[j]) {
-//       mergedArray.push(arr2[j]);
-//       j++;
-//       i--;
-//     }
-//     if (i === arr1.length - 1) {
-//       const slicedArray = arr2.slice(j);
-//       mergedArray = mergedArray.concat(slicedArray);
-//       console.log("sliced Array 2");
-//     }
-//     else if (j === arr2.length) {
-//       const slicedArray = arr1.slice(i + 1);
-//       mergedArray = mergedArray.concat(slicedArray);
-//       console.log("sliced Array 1");
-//     };
-//   }
-//   console.log('For Loop Implementation: ', mergedArray);
-//   return mergedArray;
+
+// const mergeFor1 = (arr1, arr2) => {
+  // var mergedArray = [];
+  // var j = 0;
+  // for (let i = 0; i < arr1.length && j < arr2.length; i++) {
+  //   if (arr1[i] < arr2[j]) {
+  //     mergedArray.push(arr1[i]);
+  //   }
+  //   else if (arr1[i] > arr2[j]) {
+  //     mergedArray.push(arr2[j]);
+  //     j++;
+  //     i--;
+  //   }
+  //   if (i === arr1.length - 1) {
+  //     const slicedArray = arr2.slice(j);
+  //     mergedArray = mergedArray.concat(slicedArray);
+  //     console.log("sliced Array 2");
+  //   }
+  //   else if (j === arr2.length) {
+  //     const slicedArray = arr1.slice(i + 1);
+  //     mergedArray = mergedArray.concat(slicedArray);
+  //     console.log("sliced Array 1");
+  //   };
+  // }
+  // console.log('For Loop Implementation: ', mergedArray);
+  // return mergedArray;
 // }
 // mergeFor(sortedArray3, sortedArray4);
 
+// Second Merge function with a for loop (handles all edge cases correctly)
+// e.g. 
+const sortedArray5 = [10];
+const sortedArray6 = [1, 2, 3, 4];
+
+// function mergeFor2(arr1, arr2) {
+//   let mergedArray = [];
+//   let j = 0;
+
+//   for (let i = 0; i < arr1.length && j < arr2.length; i++) {
+//     if (arr1[i] < arr2[j]) {
+//       mergedArray.push(arr1[i]);
+//     } else if (arr1[i] > arr2[j]) {
+//       mergedArray.push(arr2[j]);
+//       j++;
+//       i--; // re-check the same arr1[i] next iteration
+//     }
+//   }
+
+//   // Leftovers after loop ends
+//   if (j < arr2.length) {
+//     mergedArray = mergedArray.concat(arr2.slice(j));
+//   }
+//   if (mergedArray.length < arr1.length + arr2.length) {
+//     let lastI = mergedArray.length - j;
+//     mergedArray = mergedArray.concat(arr1.slice(lastI));
+//   }
+
+//   return mergedArray;
+// }
 
 
 
 
-// Tutorial Implementation
+// Tutorial Implementation of Merge function
 // Section 15: Merging Arrays function: Implementation 
 // Video: 89
 // Merges two already sorted arrays
