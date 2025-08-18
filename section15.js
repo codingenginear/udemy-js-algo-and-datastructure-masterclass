@@ -108,44 +108,44 @@ const sortedArray6 = [1, 2, 3, 4];
 // Tutorial Merge Sort Algorithm
 
 // Merge function from earlier
-function merge(arr1, arr2){
-    let results = [];
-    let i = 0;
-    let j = 0;
-    while(i < arr1.length && j < arr2.length){
-        if(arr2[j] > arr1[i]){
-            results.push(arr1[i]);
-            i++;
-        } else {
-            results.push(arr2[j])
-            j++;
-        }
-    }
-    while(i < arr1.length) {
-        results.push(arr1[i])
-        i++;
-    }
-    while(j < arr2.length) {
-        results.push(arr2[j])
-        j++;
-    }
-    return results;
-};
+// function merge(arr1, arr2){
+//     let results = [];
+//     let i = 0;
+//     let j = 0;
+//     while(i < arr1.length && j < arr2.length){
+//         if(arr2[j] > arr1[i]){
+//             results.push(arr1[i]);
+//             i++;
+//         } else {
+//             results.push(arr2[j])
+//             j++;
+//         }
+//     }
+//     while(i < arr1.length) {
+//         results.push(arr1[i])
+//         i++;
+//     }
+//     while(j < arr2.length) {
+//         results.push(arr2[j])
+//         j++;
+//     }
+//     return results;
+// };
 
 // Recrusive Merge Sort
-function mergeSort(arr){
-  if(arr.length <= 1) return arr;
-  let mid = Math.floor(arr.length/2);
-  console.log('Midpoint: ', mid);
+// function mergeSort(arr){
+//   if(arr.length <= 1) return arr;
+//   let mid = Math.floor(arr.length/2);
+//   console.log('Midpoint: ', mid);
 
-  let left = mergeSort(arr.slice(0, mid));
-  let right = mergeSort(arr.slice(mid));
+//   let left = mergeSort(arr.slice(0, mid));
+//   let right = mergeSort(arr.slice(mid));
 
-  console.log('Left: ', left, 'Right: ', right);
-  return merge(left, right);
-};
+//   console.log('Left: ', left, 'Right: ', right);
+//   return merge(left, right);
+// };
 
-console.log(mergeSort([10, 24, 76, 73]));
+// console.log(mergeSort([10, 24, 76, 73]));
 // console.log(mergeSort([5, 50, 20, 25, 31, 18, 200]));
 
 
@@ -173,12 +173,12 @@ const comparator = (a, b, compare) => {
   }
 };
 
-function mergeWithComparator(arr1, arr2) {
+function mergeWithComparator(arr1, arr2, compare) {
   let results = [];
   let i = 0;
   let j = 0;
   while(i < arr1.length && j < arr2.length){
-      if(comparator(arr1[i], arr2[j], 'asc') <= 0){
+      if(comparator(arr1[i], arr2[j], compare) <= 0){
           results.push(arr1[i]);
           i++;
       } else {
@@ -194,8 +194,17 @@ function mergeWithComparator(arr1, arr2) {
       results.push(arr2[j])
       j++;
   }
+
+  console.log(compare + ': ', results);
   return results;
 };
+
+mergeWithComparator(sortedArray1, sortedArray2, 'asc');
+
+const sortedArray7 = [10, 6, 5];
+const sortedArray8 = [8, 7, 3, 1];
+mergeWithComparator(sortedArray7, sortedArray8, 'desc');
+
 
 
 
