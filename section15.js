@@ -130,7 +130,7 @@ function merge(arr1, arr2){
         j++;
     }
     return results;
-}
+};
 
 // Recrusive Merge Sort
 function mergeSort(arr){
@@ -172,3 +172,30 @@ const comparator = (a, b, compare) => {
     break; 
   }
 };
+
+function mergeWithComparator(arr1, arr2) {
+  let results = [];
+  let i = 0;
+  let j = 0;
+  while(i < arr1.length && j < arr2.length){
+      if(comparator(arr1[i], arr2[j], 'asc') <= 0){
+          results.push(arr1[i]);
+          i++;
+      } else {
+          results.push(arr2[j])
+          j++;
+      }
+  }
+  while(i < arr1.length) {
+      results.push(arr1[i])
+      i++;
+  }
+  while(j < arr2.length) {
+      results.push(arr2[j])
+      j++;
+  }
+  return results;
+};
+
+
+
