@@ -210,14 +210,46 @@ const sortedArray8 = [8, 7, 3, 1];
  function mergeSort(arr, compare){
   if(arr.length <= 1) return arr;
   let mid = Math.floor(arr.length/2);
-  console.log('Midpoint: ', mid);
+  // console.log('Midpoint: ', mid);
 
   let left = mergeSort(arr.slice(0, mid), compare);
   let right = mergeSort(arr.slice(mid), compare);
 
-  console.log('Left: ', left, 'Right: ', right);
+  // console.log('Left: ', left, 'Right: ', right);
   return mergeWithComparator(left, right, compare);
 };
 
 const array = [1, 5, 3, 6, 10, 12, 7, 90, 20, 11];
 mergeSort(array, 'desc');
+
+// Writing a merge function and adding a comparator check within it that passes the coding excercise #35
+// Notice the left over checks are happening outside the for loop.
+// function merge(arr1, arr2, comparator) {
+//   if (typeof comparator !== 'function') {
+//     comparator = (a, b) => a - b;
+//   }
+
+//   let mergedArray = [];
+//   let j = 0;
+
+//   for (let i = 0; i < arr1.length && j < arr2.length; i++) {
+//     if (comparator(arr1[i], arr2[j]) <= 0) {
+//       mergedArray.push(arr1[i]);
+//     } else {
+//       mergedArray.push(arr2[j]);
+//       j++;
+//       i--;
+//     }
+//   }
+
+//   // leftover cleanup (do this *after* loop, not inside it)
+//   if (j < arr2.length) {
+//     mergedArray = mergedArray.concat(arr2.slice(j));
+//   }
+//   if (mergedArray.length < arr1.length + arr2.length) {
+//     let lastI = mergedArray.length - j;
+//     mergedArray = mergedArray.concat(arr1.slice(lastI));
+//   }
+
+//   return mergedArray;
+// }
