@@ -154,6 +154,8 @@ const sortedArray6 = [1, 2, 3, 4];
 
 // Building comparator functions to pass into the merge function as a helper to determine which merge order we want to choose (asc || desc for numbers or str/arr/obj length)
 const comparator = (a, b, compare) => {
+  if (!compare) return a - b;
+
   switch (compare) {
     case 'asc':
       return a - b
@@ -170,7 +172,7 @@ const comparator = (a, b, compare) => {
     case 'descLength':
     return b.length - a.length
     break; 
-  }
+  };
 };
 
 function mergeWithComparator(arr1, arr2, compare) {
@@ -199,12 +201,23 @@ function mergeWithComparator(arr1, arr2, compare) {
   return results;
 };
 
-mergeWithComparator(sortedArray1, sortedArray2, 'asc');
+// mergeWithComparator(sortedArray1, sortedArray2, 'asc');
 
 const sortedArray7 = [10, 6, 5];
 const sortedArray8 = [8, 7, 3, 1];
-mergeWithComparator(sortedArray7, sortedArray8, 'desc');
+// mergeWithComparator(sortedArray7, sortedArray8, 'desc');
 
+ function mergeSort(arr, compare){
+  if(arr.length <= 1) return arr;
+  let mid = Math.floor(arr.length/2);
+  console.log('Midpoint: ', mid);
 
+  let left = mergeSort(arr.slice(0, mid), compare);
+  let right = mergeSort(arr.slice(mid), compare);
 
+  console.log('Left: ', left, 'Right: ', right);
+  return mergeWithComparator(left, right, compare);
+};
 
+const array = [1, 5, 3, 6, 10, 12, 7, 90, 20, 11];
+mergeSort(array, 'desc');
