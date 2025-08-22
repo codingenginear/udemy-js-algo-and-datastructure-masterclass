@@ -28,8 +28,9 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
 
   console.log('Pivot Index: ', start, 'Swap Index: ', swapIndx);
   swap(arr, start, swapIndx);
-  return arr;
+  return swapIndx;
 };
 
 console.log(pivot(array2));
+
 
