@@ -31,6 +31,21 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
   return swapIndx;
 };
 
-console.log(pivot(array2));
+// console.log(pivot(array2));
 
 
+// Quick Sort Algorithm
+
+const quickSort = (arr, left = 0, right = arr.length - 1) => {
+  if (left < right) {
+    const pivotIdx = pivot(arr, left, right);
+    // left recursion
+    quickSort(arr, left, pivotIdx - 1);
+    // right recursion
+    quickSort(arr, pivotIdx + 1, right);
+  };
+
+  return arr;
+};
+
+console.log(quickSort([100, -3, 2, 4, 6, 9, 1, 2, 5, 3, 23]));
