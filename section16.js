@@ -19,7 +19,7 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
   let swapIndx = start;
   let pivot = arr[start];
 
-  for (let i = start + 1; i < arr.length - 1; i++) {
+  for (let i = start + 1; i < arr.length; i++) {
     if (pivot > arr[i]) {
       swapIndx++;
       swap(arr, swapIndx, i);
