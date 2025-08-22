@@ -15,6 +15,12 @@ const swap = (arr, indx1, indx2) => {
 };
 // console.log(swap(array1, 0, 8));
 
+// This is the es6 form of the swap function
+const swapES6 = (arr, idx1, idx2) => {
+  [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+};
+
+// Pivot Fn: Used to swap 2 indexes when the first index is greater then the second index
 const pivot = (arr, start = 0, end = arr.length - 1) => {
   let swapIndx = start;
   let pivot = arr[start];
@@ -27,15 +33,13 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
   };
 
   console.log('Pivot Index: ', start, 'Swap Index: ', swapIndx);
-  swap(arr, start, swapIndx);
+  console.log('Swap after Pivot Fn: ', swap(arr, start, swapIndx));
   return swapIndx;
 };
-
 // console.log(pivot(array2));
 
 
 // Quick Sort Algorithm
-
 const quickSort = (arr, left = 0, right = arr.length - 1) => {
   if (left < right) {
     const pivotIdx = pivot(arr, left, right);
