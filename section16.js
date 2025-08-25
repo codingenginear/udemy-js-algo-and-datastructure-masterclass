@@ -5,12 +5,8 @@
 // So we need a swap function that we have built earlier in the course and will use to swap 2 elements in an array to switch their places in the array.
 const array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const array2 = [4, 8, 2, 1, 5, 7, 6, 3];
-var arr3 = ["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"];
+const array3 = ["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"];
  
-function strLength(a, b) {
-  return a.length - b.length
-}
-
 // This is the original swap function. We will write a swap function in es6 syntax as well underneath it, they both do the same thing.
 const swap = (arr, indx1, indx2) => {
   const temp = arr[indx1];
@@ -60,6 +56,10 @@ const swap = (arr, indx1, indx2) => {
 // console.log(quickSort([100, -3, 2, 4, 6, 9, 1, 2, 5, 3, 23]));
 
 // Implementing Pivot Fn Helper and Quick Sort with comparator fn.
+function strLengthComparator(a, b) {
+  return a.length - b.length
+};
+
 const pivot = (arr, comparator, start = 0, end = arr.length - 1) => {
   if (typeof comparator !== 'function') {
     comparator = (a, b) => {
@@ -82,4 +82,4 @@ const pivot = (arr, comparator, start = 0, end = arr.length - 1) => {
   return swapIndx;
 };
 
-console.log(pivot(arr3, strLength));
+console.log(pivot(array3, strLengthComparator));
