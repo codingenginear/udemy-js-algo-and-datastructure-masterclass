@@ -71,15 +71,17 @@ const pivot = (arr, comparator, start = 0, end = arr.length - 1) => {
   let pivot = arr[start];
 
   for (let i = start + 1; i < arr.length; i++) {
-    if (comparator(arr[i], pivot) < 0) {
+    if (comparator(arr[i], pivot) <= 0) {
       swapIndx++;
+      console.log("Array @ initial swaps: ", arr[i])
       swap(arr, swapIndx, i);
     }; 
   };
 
   console.log('Pivot Index: ', start, 'Swap Index: ', swapIndx);
-  console.log('Swap after Pivot Fn: ', swap(arr, start, swapIndx));
+  console.log('Swap at end of Pivot Fn: ', swap(arr, start, swapIndx));
   return swapIndx;
 };
+// const array3 = ["LilBub", "Garfield", "Heathcliff", "Grumpy", "Blue"];
 
 console.log(pivot(array3, strLengthComparator));
