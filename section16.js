@@ -82,6 +82,5 @@ const pivot = (arr, comparator, start = 0, end = arr.length - 1) => {
   console.log('Swap at end of Pivot Fn: ', swap(arr, start, swapIndx));
   return swapIndx;
 };
-// const array3 = ["LilBub", "Garfield", "Heathcliff", "Grumpy", "Blue"];
 
 console.log(pivot(array3, strLengthComparator));
