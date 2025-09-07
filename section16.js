@@ -87,7 +87,8 @@ console.log(pivot(array3, strLengthComparator));
 
 // Implementing Pivot Fn Helper and Quick Sort with comparator fn.
 
-const quickSort = () => {
-
+const quickSort = (phrase) => {
+  return phrase;
 };
 
+console.log(quickSort('Hello World'));
