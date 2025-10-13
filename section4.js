@@ -9,6 +9,7 @@ function charCount(string) {
   let charObj = {};
 
   for (let i = 0; i < string.length; i++) {
+    if (string[i] === ' ') continue;
     if (charObj[string[i]]) {
       charObj[string[i]] ++;
     }
@@ -19,4 +20,4 @@ function charCount(string) {
   return charObj;
 };
 
-console.log(charCount('aaabbbcccddd'));
+console.log(charCount('Hello World'));
