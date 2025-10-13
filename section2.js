@@ -8,3 +8,11 @@
 // then we can just subtract the t1 from t2. This will give us how long the function took to execute.
 // e.g. if t1 runs @ 17:00:00 PM then we make dinner and after dinner we clock the time (t2) @ 17:30:00
 // then we know it took 30 mins to cook dinner.
+
+const addUpTo = (n) => {
+  let total = 0;
+  for (let i = 0; i <= n; i++) {
+    total += i;
+  };
+  return total;
+}
