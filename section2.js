@@ -24,4 +24,5 @@ let t2 = performance.now();
 console.log('Time 1: ', t1);
 console.log('Time 2: ', t2);
 
+// Divide difference of time by 1000 because performance.now() works with miliseconds.
 console.log(`Time Elapsed: ${(t2 - t1) / 1000} seconds`);
