@@ -86,7 +86,7 @@ function charCount4(str) {
 };
 
 function isAlphaNumeric(char) {
-  var code = char.charCode(0);
+  var code = char.charCodeAt(0);
   if 
     (
       !(code > 47 && code < 58) &&
