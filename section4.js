@@ -28,3 +28,25 @@ console.log(charCount('Hello World'));
 
 // e.g. 'Hello World 123123' // Should we ignore the lower and upper case or should we add lower case and uppercase seperately
 // e.g. 'Hello World 23423' // Should we ignore spacing and numbers etc.
+
+
+// Refactoring options for this solution
+
+// First refactor handles and checks if the input is correct - it ignores all commas etc. and only allows alpha numeric characters like numbers and letters - no symbols
+
+function charCount(str) {
+  var result = {};
+
+  for (var i = 0; i < str.length; i++) {
+    var char = str[i].toLowerCase();
+    if (/[a-z0-9]/.test(char)) {
+      if (result[char] > 0) {
+        result[char] ++;
+      }
+      else {
+        result[char] = 1;
+      };
+    };
+  };
+  return result;
+};
