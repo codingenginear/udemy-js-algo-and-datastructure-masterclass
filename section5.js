@@ -32,6 +32,7 @@ const same = (arr1, arr2) => {
 
 }
 
+console.log(same([1, 2, 3], [4, 1, 9]));
 console.log(same([4, 2, 3, 1], [4, 1, 9, 16]));
 // console.log(same([1, 2, 3], [4, 9]));
 // console.log(same([1, 2, 3], [4, 4, 1]));
