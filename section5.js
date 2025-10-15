@@ -12,13 +12,13 @@ const same = (arr1, arr2) => {
     for (var i = 0; i < arr1.length; i++) {
       let iSquared = Math.pow(arr1[i], 2);
       console.log('i Squared: ', iSquared);
-      
+
       for(var j = 0; j < arr2.length; j++) {
         if (iSquared === arr2[j]) {
+          console.log('Found Match with: ', arr1[i], arr2[j]);
           arr1.splice(i, 1);
           arr2.splice(j, 1);
-
-          console.log('Found Match with: ', arr1[i], arr2[j]);
+          i--;
         };
       };
     };
@@ -32,6 +32,6 @@ const same = (arr1, arr2) => {
 
 }
 
-console.log(same([1, 2, 3], [4, 1, 9]));
+console.log(same([4, 2, 3, 1], [4, 1, 9, 16]));
 // console.log(same([1, 2, 3], [4, 9]));
 // console.log(same([1, 2, 3], [4, 4, 1]));
