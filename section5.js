@@ -48,6 +48,17 @@ const same2 = (arr1, arr2) => {
   console.log('OBJECT 1: ', obj1);
   console.log('OBJECT 2: ', obj2);
 
+  if (arr1.length !== arr2.length) {
+    return false;
+  };
+
+  for (const key in obj1) {
+    if (obj1[key] !== obj2[Math.pow(key, 2)]) {
+      return false;
+    }
+  };
+
+  return true;
 };
 
 const parse = (arr) => {
@@ -65,4 +76,4 @@ const parse = (arr) => {
   return obj;
 };
 
-same2([1, 2, 3], [4, 1, 9]);
+console.log(same2([1, 2, 2, 3], [4, 1, 4, 9]));
