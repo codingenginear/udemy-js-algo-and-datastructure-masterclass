@@ -13,7 +13,7 @@ const same = (arr1, arr2) => {
       let iSquared = Math.pow(arr1[i], 2);
       console.log('i Squared: ', iSquared);
 
-      for(var j = 0; j < arr2.length; j++) {
+      for (var j = 0; j < arr2.length; j++) {
         if (iSquared === arr2[j]) {
           console.log('Found Match with: ', arr1[i], arr2[j]);
           arr1.splice(i, 1);
