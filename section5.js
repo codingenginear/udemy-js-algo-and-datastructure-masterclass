@@ -1,6 +1,6 @@
 // Section 5: Problem Solving Patterns
 
-// Video 29: Frequency Counter Pattern
+// Video 29: Frequency Counter Pattern (naive solution - O(n^2) Solution)
 // Write a fn called same, which accepts 2 arrays. The fn should return true if every value in the array has it's corresponding value 
 // squared in the second array. The frequency of values must be the same.
 
@@ -36,3 +36,11 @@ console.log(same([1, 2, 3], [4, 1, 9]));
 // console.log(same([4, 2, 3, 1], [4, 1, 9, 16]));
 // console.log(same([1, 2, 3], [4, 9]));
 // console.log(same([1, 2, 3], [4, 4, 1]));
+
+//-----------------------------------------------------
+
+// Video 29: Frequency Counter Pattern (Advanced Solution - O(n) Solution)
+
+const same2 = (arr1, arr2) => {
+  
+}
