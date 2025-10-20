@@ -32,7 +32,7 @@ const same = (arr1, arr2) => {
 
 }
 
-console.log(same([1, 2, 3], [4, 1, 9]));
+// console.log(same([1, 2, 3], [4, 1, 9]));
 // console.log(same([4, 2, 3, 1], [4, 1, 9, 16]));
 // console.log(same([1, 2, 3], [4, 9]));
 // console.log(same([1, 2, 3], [4, 4, 1]));
@@ -42,5 +42,27 @@ console.log(same([1, 2, 3], [4, 1, 9]));
 // Video 29: Frequency Counter Pattern (Advanced Solution - O(n) Solution)
 
 const same2 = (arr1, arr2) => {
-  
-}
+  const obj1 = parse(arr1);
+  const obj2 = parse(arr2);
+
+  console.log('OBJECT 1: ', obj1);
+  console.log('OBJECT 2: ', obj2);
+
+};
+
+const parse = (arr) => {
+  const obj = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    if (obj[arr[i]]) {
+      obj[arr[i]] ++;
+    }
+    else {
+      obj[arr[i]] = 1;
+    };
+  };
+
+  return obj;
+};
+
+same2([1, 2, 3], [4, 1, 9]);
