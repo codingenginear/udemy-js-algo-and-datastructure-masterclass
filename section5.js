@@ -55,6 +55,7 @@ const same2 = (arr1, arr2) => {
   for (const key in obj1) {
     if (obj1[key] !== obj2[Math.pow(key, 2)]) {
       return false;
+      console.log('')
     }
   };
 
@@ -76,4 +77,5 @@ const parse = (arr) => {
   return obj;
 };
 
-console.log(same2([1, 2, 2, 3], [4, 1, 4, 9]));
+// console.log(same2([1, 2, 2, 3], [4, 1, 4, 9]));
+console.log(same2([1, 2, 2, 3], [4, 1, 9, 9]));
