@@ -37,7 +37,6 @@ const same = (arr1, arr2) => {
 // console.log(same([1, 2, 3], [4, 9]));
 // console.log(same([1, 2, 3], [4, 4, 1]));
 
-//-----------------------------------------------------
 
 // Video 29: Frequency Counter Pattern (Advanced Solution - O(n) Solution)
 
@@ -80,3 +79,9 @@ const parse = (arr) => {
 console.log(same2([1, 2, 3], [4, 1, 9]));
 // console.log(same2([1, 2, 2, 3], [4, 1, 4, 9]));
 console.log(same2([1, 2, 2, 3], [4, 1, 9, 9]));
+
+
+//-----------------------------------------------------
+
+
+// Video 30: Frequency Counter: Anagram Challenge
