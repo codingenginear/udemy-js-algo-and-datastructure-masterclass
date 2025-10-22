@@ -85,4 +85,32 @@ console.log(same2([1, 2, 2, 3], [4, 1, 9, 9]));
 
 
 // Video 30: Frequency Counter: Anagram Challenge
+
 // Given 2 strings, write a fn to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as "cinema", formed from "iceman". 
+
+
+const isAnagram = (str1, str2) => {
+  if (str1.length !== str2.length) return false;
+
+  const parsedStr1 = parseStr(str1); 
+  const parsedStr2 = parseStr(str2);
+
+  for (let key in parsedStr1) {
+    if (parsedStr1[key] !== parsedStr2[key]) return false
+  };
+
+  return true;
+};
+
+const parseStr = (str) => {
+  let obj = {};
+
+  for (let i = 0; i < str.length; i++) {
+    if (obj[str[i]]) {
+      obj[i]++;
+    }
+    else {
+      obj[str[i]] += 1;
+    };
+  };
+};
