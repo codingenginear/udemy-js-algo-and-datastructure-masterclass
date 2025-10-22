@@ -77,5 +77,6 @@ const parse = (arr) => {
   return obj;
 };
 
+console.log(same2([1, 2, 3], [4, 1, 9]));
 // console.log(same2([1, 2, 2, 3], [4, 1, 4, 9]));
 console.log(same2([1, 2, 2, 3], [4, 1, 9, 9]));
