@@ -119,5 +119,8 @@ const parseStr = (str) => {
 };
 
 
+// console.log(isAnagram('', ''));
 // console.log(isAnagram('atta', 'taat'));
-console.log(isAnagram('Hello World', 'Hello World'));
+// console.log(isAnagram('Hello World', 'Hello World'));
+// console.log(isAnagram('iceman', 'cinema'));
+console.log(isAnagram('texttimetwist', 'timetwisttext'));
