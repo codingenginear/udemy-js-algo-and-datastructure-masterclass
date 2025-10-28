@@ -169,22 +169,22 @@ const sumZero = (arr) => {
   let rightNum = arr.length - 1;
 
   while (leftNum < rightNum) {
+    let sum = arr[leftNum] + arr[rightNum];
     
-    if (arr[leftNum] + arr[rightNum] === 0) {
+    if ( sum === 0) {
       return [arr[leftNum], arr[rightNum]];
-    }
+    };
     
-    if (arr[leftNum] + arr[rightNum] > 0) {
+    if (sum > 0) {
       rightNum --;
-    } 
-    
-    if (arr[leftNum] + arr[rightNum] < 0) {
+    }; 
+
+    if (sum < 0) {
       leftNum ++;
     };
 
-
-  }
-}
+  };
+};
 
 console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 5]))   // [-3, 3]
 console.log(sumZero([-2, 0, 1, 3]))    // undefined
