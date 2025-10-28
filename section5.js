@@ -137,25 +137,53 @@
 
 // This is my solution using the frequency counter solution. However the course expects me to solve this using the multiple pointers pattern so the next attempt will be done using that pattern.
 
-const countUniqueValues = (sortedArr) => {
-  if (sortedArr.length === 0) return 0;
+// const countUniqueValues = (sortedArr) => {
+//   if (sortedArr.length === 0) return 0;
 
-  const parsedObj = {};
+//   const parsedObj = {};
 
-  for (let i = 0; i < sortedArr.length; i++) {
-    if (!parsedObj[sortedArr[i]]) {
-      parsedObj[sortedArr[i]] = 1;
+//   for (let i = 0; i < sortedArr.length; i++) {
+//     if (!parsedObj[sortedArr[i]]) {
+//       parsedObj[sortedArr[i]] = 1;
+//     }
+//     else {
+//       parsedObj[sortedArr[i]] ++;
+//     }
+//   }
+//   console.log(parsedObj);
+
+//   return Object.keys(parsedObj).length;
+// }
+
+// console.log(countUniqueValues([1, 1, 1, 1, 1, 2, 2]));
+// console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
+// console.log(countUniqueValues([]));
+// console.log(countUniqueValues([-2, -1, -1, 0, 1]));
+
+
+// Video #32: Multiple Pointers
+// e.g. Write a fn called sumZero which accepts a sorted array of integers. The function should find the first pair where the sum is 0. Return an array that includes both values that sum to 0 or undefined if a pair does not exist.
+
+const sumZero = (arr) => {
+  let leftNum = 0;
+  let rightNum = arr.length - 1;
+
+  while (arr[leftNum] < arr[rightNum]) {
+    if (arr[leftNum] + arr[rightNum] > 0) {
+      rightNum --;
+    } 
+    
+    if (arr[leftNum] + arr[rightNum] === 0) {
+      return [arr[leftNum], arr[rightNum]];
     }
-    else {
-      parsedObj[sortedArr[i]] ++;
-    }
+    if (arr[leftNum] + arr[rightNum] < 0) {
+      leftNum ++;
+    };
+
+
   }
-  console.log(parsedObj);
-
-  return Object.keys(parsedObj).length;
 }
 
-console.log(countUniqueValues([1, 1, 1, 1, 1, 2, 2]));
-console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
-console.log(countUniqueValues([]));
-console.log(countUniqueValues([-2, -1, -1, 0, 1]));
+console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 5]))   // [-3, 3]
+console.log(sumZero([-2, 0, 1, 3]))    // undefined
+console.log(sumZero([1, 2, 3]))    // undefined
