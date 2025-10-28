@@ -89,41 +89,41 @@
 // Given 2 strings, write a fn to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as "cinema", formed from "iceman". 
 
 
-const isAnagram = (str1, str2) => {
-  if (str1.length !== str2.length) return false;
+// const isAnagram = (str1, str2) => {
+//   if (str1.length !== str2.length) return false;
 
-  const parsedStr1 = parseStr(str1); 
-  const parsedStr2 = parseStr(str2);
+//   const parsedStr1 = parseStr(str1); 
+//   const parsedStr2 = parseStr(str2);
 
-  for (let key in parsedStr1) {
-    if (parsedStr1[key] !== parsedStr2[key]) return false;
-  };
+//   for (let key in parsedStr1) {
+//     if (parsedStr1[key] !== parsedStr2[key]) return false;
+//   };
 
-  return true;
-};
+//   return true;
+// };
 
-const parseStr = (str) => {
-  let obj = {};
+// const parseStr = (str) => {
+//   let obj = {};
   
-  for (let i = 0; i < str.length; i++) {
-    if (obj[str[i]]) {
-      obj[str[i]]++;
-    }
-    else {
-      obj[str[i]] = 1;
-    };
-  };
-  console.log(obj);
+//   for (let i = 0; i < str.length; i++) {
+//     if (obj[str[i]]) {
+//       obj[str[i]]++;
+//     }
+//     else {
+//       obj[str[i]] = 1;
+//     };
+//   };
+//   console.log(obj);
   
-  return obj;
-};
+//   return obj;
+// };
 
 
 // console.log(isAnagram('', ''));
 // console.log(isAnagram('atta', 'taat'));
 // console.log(isAnagram('Hello World', 'Hello World'));
 // console.log(isAnagram('iceman', 'cinema'));
-console.log(isAnagram('texttimetwist', 'timetwisttext'));
+// console.log(isAnagram('texttimetwist', 'timetwisttext'));
 
 
 
@@ -135,4 +135,27 @@ console.log(isAnagram('texttimetwist', 'timetwisttext'));
 // countUniqueValues
 // Implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted.
 
+// This is my solution
 
+const countUniqueValues = (sortedArr) => {
+  if (sortedArr.length === 0) return 0;
+
+  const parsedObj = {};
+
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (!parsedObj[sortedArr[i]]) {
+      parsedObj[sortedArr[i]] = 1;
+    }
+    else {
+      parsedObj[sortedArr[i]] ++;
+    }
+  }
+  console.log(parsedObj);
+
+  return Object.keys(parsedObj).length;
+}
+
+console.log(countUniqueValues([1, 1, 1, 1, 1, 2, 2]));
+console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
+console.log(countUniqueValues([]));
+console.log(countUniqueValues([-2, -1, -1, 0, 1]));
