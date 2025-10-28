@@ -171,15 +171,13 @@ const sumZero = (arr) => {
   while (leftNum < rightNum) {
     let sum = arr[leftNum] + arr[rightNum];
     
-    
+    if ( sum === 0) {
+      return [arr[leftNum], arr[rightNum]];
+    };
     
     if (sum > 0) {
       rightNum --;
     }; 
-
-    if ( sum === 0) {
-      return [arr[leftNum], arr[rightNum]];
-    };
 
     if (sum < 0) {
       leftNum ++;
