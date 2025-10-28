@@ -168,14 +168,16 @@ const sumZero = (arr) => {
   let leftNum = 0;
   let rightNum = arr.length - 1;
 
-  while (arr[leftNum] < arr[rightNum]) {
-    if (arr[leftNum] + arr[rightNum] > 0) {
-      rightNum --;
-    } 
+  while (leftNum < rightNum) {
     
     if (arr[leftNum] + arr[rightNum] === 0) {
       return [arr[leftNum], arr[rightNum]];
     }
+    
+    if (arr[leftNum] + arr[rightNum] > 0) {
+      rightNum --;
+    } 
+    
     if (arr[leftNum] + arr[rightNum] < 0) {
       leftNum ++;
     };
