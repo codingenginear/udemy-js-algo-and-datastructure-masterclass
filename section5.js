@@ -135,7 +135,7 @@
 // countUniqueValues
 // Implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted.
 
-// This is my solution
+// This is my solution using the frequency counter solution. However the course expects me to solve this using the multiple pointers pattern so the next attempt will be done using that pattern.
 
 const countUniqueValues = (sortedArr) => {
   if (sortedArr.length === 0) return 0;
