@@ -169,8 +169,8 @@ const sumZero = (arr) => {
   let rightNum = arr.length - 1;
 
   while (leftNum < rightNum) {
+    // This gives the correct output.
     let sum = arr[leftNum] + arr[rightNum];
-    
     if ( sum === 0) {
       return [arr[leftNum], arr[rightNum]];
     };
@@ -183,8 +183,22 @@ const sumZero = (arr) => {
       leftNum ++;
     };
 
-  };
-};
+    // Doesn't give correct output on test with a 0 in array
+    // The wierd anomoly why does it give me a false positive when i don't use sum? 
+
+    // if (arr[leftNum] + arr[rightNum] > 0) {
+    //   rightNum --;
+    // } 
+    // if (arr[leftNum] + arr[rightNum] === 0) {
+    //   return [arr[leftNum], arr[rightNum]];
+    // }
+    // if (arr[leftNum] + arr[rightNum] < 0) {
+    //   leftNum ++;
+    // };
+
+
+  }
+}
 
 console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 5]))   // [-3, 3]
 console.log(sumZero([-2, 0, 1, 3]))    // undefined
