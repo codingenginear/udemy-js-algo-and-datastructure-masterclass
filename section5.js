@@ -169,6 +169,7 @@ const sumZero = (arr) => {
   let rightNum = arr.length - 1;
 
   while (leftNum < rightNum) {
+    
     // This gives the correct output.
     let sum = arr[leftNum] + arr[rightNum];
     if ( sum === 0) {
