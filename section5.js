@@ -169,7 +169,7 @@ const sumZero = (arr) => {
   let rightNum = arr.length - 1;
 
   while (leftNum < rightNum) {
-    
+
     // This gives the correct output.
     let sum = arr[leftNum] + arr[rightNum];
     if ( sum === 0) {
@@ -200,6 +200,7 @@ const sumZero = (arr) => {
 
   }
 }
+
 
 console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 5]))   // [-3, 3]
 console.log(sumZero([-2, 0, 1, 3]))    // undefined
