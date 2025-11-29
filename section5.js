@@ -196,8 +196,6 @@ const sumZero = (arr) => {
     // if (arr[leftNum] + arr[rightNum] < 0) {
     //   leftNum ++;
     // };
-
-
   };
 };
 
