@@ -157,12 +157,28 @@
 
 // Solution 2: Multiple Pointers Solution
 
+const countUniqueValues = (sortedArr) => {
+  const firstVal = sortedArr[0];
+  const nextVal = sortedArr[1];
+  const uniqueArr = [];
+
+  if (sortedArr.length === 0) {
+    return 0;
+  }
+
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (firstVal !== nextVal) {
+      uniqueArr.push(firstVal);
+      
+    }
+  }
+}
 
 
-// console.log(countUniqueValues([1, 1, 1, 1, 1, 2, 2]));
-// console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
-// console.log(countUniqueValues([]));
-// console.log(countUniqueValues([-2, -1, -1, 0, 1]));
+// console.log(countUniqueValues([1, 1, 1, 1, 1, 2, 2])); // 2
+// console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13])); // 7
+// console.log(countUniqueValues([])); // 0
+// console.log(countUniqueValues([-2, -1, -1, 0, 1])); //4
 
 
 // Video #32: Multiple Pointers
