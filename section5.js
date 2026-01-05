@@ -135,7 +135,7 @@
 // countUniqueValues
 // Implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted.
 
-// This is my solution using the frequency counter solution. However the course expects me to solve this using the multiple pointers pattern so the next attempt will be done using that pattern.
+// Solution 1: This is my solution using the frequency counter solution. However the course expects me to solve this using the multiple pointers pattern so the next attempt will be done using that pattern.
 
 // const countUniqueValues = (sortedArr) => {
 //   if (sortedArr.length === 0) return 0;
@@ -155,6 +155,10 @@
 //   return Object.keys(parsedObj).length;
 // }
 
+// Solution 2: Multiple Pointers Solution
+
+
+
 // console.log(countUniqueValues([1, 1, 1, 1, 1, 2, 2]));
 // console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
 // console.log(countUniqueValues([]));
@@ -164,25 +168,25 @@
 // Video #32: Multiple Pointers
 // e.g. Write a fn called sumZero which accepts a sorted array of integers. The function should find the first pair where the sum is 0. Return an array that includes both values that sum to 0 or undefined if a pair does not exist.
 
-const sumZero = (arr) => {
-  let leftNum = 0;
-  let rightNum = arr.length - 1;
+// const sumZero = (arr) => {
+//   let leftNum = 0;
+//   let rightNum = arr.length - 1;
 
-  while (leftNum < rightNum) {
+//   while (leftNum < rightNum) {
 
-    // This gives the correct output.
-    let sum = arr[leftNum] + arr[rightNum];
-    if ( sum === 0) {
-      return [arr[leftNum], arr[rightNum]];
-    };
+//     // This gives the correct output.
+//     let sum = arr[leftNum] + arr[rightNum];
+//     if ( sum === 0) {
+//       return [arr[leftNum], arr[rightNum]];
+//     };
     
-    if (sum > 0) {
-      rightNum --;
-    }; 
+//     if (sum > 0) {
+//       rightNum --;
+//     }; 
 
-    if (sum < 0) {
-      leftNum ++;
-    };
+//     if (sum < 0) {
+//       leftNum ++;
+//     };
 
     // Doesn't give correct output on test with a 0 in array
     // The wierd anomoly why does it give me a false positive when i don't use sum? 
@@ -197,8 +201,8 @@ const sumZero = (arr) => {
     //   leftNum ++;
     // };
     
-  };
-};
+//   };
+// };
 
 
 console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 5]))   // [-3, 3]
