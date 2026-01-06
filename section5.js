@@ -165,24 +165,26 @@ const countUniqueValues2 = (sortedArr) => {
     return 0;
   }
 
-  while (sortedArr[j] !== 'undefined') {
+  while (sortedArr[j] !== undefined) {
     if (sortedArr[i] === sortedArr[j]) {
       j++;
+      console.log('Adding 1 to J: ', j);
     }
     else if (sortedArr[i] !== sortedArr[j]) {
       i++;
+      console.log('Adding 1 to I: ', i);
       sortedArr[i] = sortedArr[j];
-    }
+    };
   };
-
-  return i;
+  console.log(sortedArr);
+  return i + 1;
 };
 
-//                                             
-// console.log(countUniqueValues([1, 1, 1, 1, 1, 2, 2])); // 2
-// console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13])); // 7
-// console.log(countUniqueValues([])); // 0
-// console.log(countUniqueValues([-2, -1, -1, 0, 1])); //4
+                                             
+// console.log(countUniqueValues2([1, 1, 1, 1, 1, 2, 2])); // 2
+// console.log(countUniqueValues2([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13])); // 7
+// console.log(countUniqueValues2([])); // 0
+console.log(countUniqueValues2([-2, -1, -1, 0, 1])); //4
 
 
 // Video #32: Multiple Pointers
@@ -226,6 +228,6 @@ const countUniqueValues2 = (sortedArr) => {
 
 
 
-console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 5]))   // [-3, 3]
-console.log(sumZero([-2, 0, 1, 3]))    // undefined
-console.log(sumZero([1, 2, 3]))    // undefined
+// console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 5]))   // [-3, 3]
+// console.log(sumZero([-2, 0, 1, 3]))    // undefined
+// console.log(sumZero([1, 2, 3]))    // undefined
