@@ -256,7 +256,22 @@
 
 // Problem: Write a question called maxSubarraySum which accepts an array of integers and a number called n. The function should aclculate the maximum sum of n consecutive elements in the array.
 
+// Buggy Solution: Not correct
+// const maxSubarraySumIncorrect = (arr, num) => { 
+//   let maxSum = 0; 
+//   if (arr.length < num) return null; 
+//   for (let i = 0; i < num; i++) { 
+//     maxSum += arr[i] 
+//   } 
+//   for (let i = num; i < arr.length; i++) { 
+//     let tempSum = maxSum - arr[i - num] + arr[i]; 
+//     maxSum = Math.max(maxSum, tempSum); 
+//     console.log(maxSum); 
+//   } 
+//   return maxSum; 
+// }
 
+// This is the correct Solution (On complexity)
 const maxSubarraySum = (arr, num) => {
   let maxSum = 0;
   let tempSum = 0;
@@ -274,9 +289,28 @@ const maxSubarraySum = (arr, num) => {
   return maxSum;
 } 
 
+// This is the naiive solution provided by the course (On2 complexity)
+// function maxSubarraySum(arr, num) {
+//   if ( num > arr.length){
+//     return null;
+//   }
+//   var max = -Infinity;
+//   for (let i = 0; i < arr.length - num + 1; i ++){
+//     temp = 0;
+//     for (let j = 0; j < num; j++){
+//       temp += arr[i + j];
+//     }
+//     if (temp > max) {
+//       max = temp;
+//     }
+//   }
+//   return max;
+// }
+
+// maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
 
 // maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 2) // 10
 // maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 4) // 17
-maxSubarraySum([4, 2, 1, 6], 1) // 6
+// maxSubarraySum([4, 2, 1, 6], 1) // 6
 // maxSubarraySum([4, 2, 1, 6], 4) // 13
 // maxSubarraySum([], 4) // null
