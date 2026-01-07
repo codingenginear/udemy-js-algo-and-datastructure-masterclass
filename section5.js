@@ -81,7 +81,7 @@
 // console.log(same2([1, 2, 2, 3], [4, 1, 9, 9]));
 
 
-//-----------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 // Video 30: Frequency Counter: Anagram Challenge
@@ -127,7 +127,7 @@
 
 
 
-//-----------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 // Video 33: Multiple Pointers Pattern: Count Unique Values Challenge
@@ -135,7 +135,7 @@
 // countUniqueValues
 // Implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted.
 
-// Solution 1: This is my solution using the frequency counter solution. However the course expects me to solve this using the multiple pointers pattern so the next attempt will be done using that pattern.
+// Solution 1: Frequency Counter Solution for Video #33 Count Unique Values (However the course expects me to solve this using the multiple pointers pattern so the next attempt will be done using that pattern).
 
 // const countUniqueValues = (sortedArr) => {
 //   if (sortedArr.length === 0) return 0;
@@ -155,37 +155,38 @@
 //   return Object.keys(parsedObj).length;
 // }
 
-// Solution 2: Multiple Pointers Solution
+// Solution 2: Multiple Pointers Solution for Video #33 Count Unique Values
 
-const countUniqueValues2 = (sortedArr) => {
-  let i = 0;
-  let j = 1;
+// const countUniqueValues2 = (sortedArr) => {
+//   let i = 0;
+//   let j = 1;
 
-  if (sortedArr.length === 0) {
-    return 0;
-  }
+//   if (sortedArr.length === 0) {
+//     return 0;
+//   }
 
-  while (sortedArr[j] !== undefined) {
-    if (sortedArr[i] === sortedArr[j]) {
-      j++;
-      console.log('Adding 1 to J: ', j);
-    }
-    else if (sortedArr[i] !== sortedArr[j]) {
-      i++;
-      console.log('Adding 1 to I: ', i);
-      sortedArr[i] = sortedArr[j];
-    };
-  };
-  console.log(sortedArr);
-  return i + 1;
-};
+//   while (sortedArr[j] !== undefined) {
+//     if (sortedArr[i] === sortedArr[j]) {
+//       j++;
+//       console.log('Adding 1 to J: ', j);
+//     }
+//     else if (sortedArr[i] !== sortedArr[j]) {
+//       i++;
+//       console.log('Adding 1 to I: ', i);
+//       sortedArr[i] = sortedArr[j];
+//     };
+//   };
+//   console.log(sortedArr);
+//   return i + 1;
+// };
 
                                              
 // console.log(countUniqueValues2([1, 1, 1, 1, 1, 2, 2])); // 2
 // console.log(countUniqueValues2([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13])); // 7
 // console.log(countUniqueValues2([])); // 0
-console.log(countUniqueValues2([-2, -1, -1, 0, 1])); //4
+// console.log(countUniqueValues2([-2, -1, -1, 0, 1])); //4
 
+// ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Video #32: Multiple Pointers
 // e.g. Write a fn called sumZero which accepts a sorted array of integers. The function should find the first pair where the sum is 0. Return an array that includes both values that sum to 0 or undefined if a pair does not exist.
@@ -226,8 +227,23 @@ console.log(countUniqueValues2([-2, -1, -1, 0, 1])); //4
 //   };
 // };
 
-
-
 // console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 5]))   // [-3, 3]
 // console.log(sumZero([-2, 0, 1, 3]))    // undefined
 // console.log(sumZero([1, 2, 3]))    // undefined
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Video #34: Count Unique Values Solution (Course Solution - The course used a for loop within their solution when i used a while loop)
+
+// function countUniqueValues(arr){
+//     if(arr.length === 0) return 0;
+//     var i = 0;
+//     for(var j = 1; j < arr.length; j++){
+//         if(arr[i] !== arr[j]){
+//             i++;
+//             arr[i] = arr[j]
+//         }
+//     }
+//     return i + 1;
+// }
+// countUniqueValues([1,2,2,5,7,7,99])
