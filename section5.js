@@ -307,8 +307,7 @@ const maxSubarraySum = (arr, num) => {
 //   return max;
 // }
 
-// maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
-
+// maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3)
 // maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 2) // 10
 // maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 4) // 17
 // maxSubarraySum([4, 2, 1, 6], 1) // 6
