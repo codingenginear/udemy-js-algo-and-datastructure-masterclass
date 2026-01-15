@@ -31,10 +31,28 @@ const sameFrequency = (num1, num2) => {
   const parsedNum2 = {};
 
   // Convert numbers into string to loop over
-  const str1 = [...num1.toString()].map(Number);
-  const str2 = [...num2.toString()].map(Number);
+  const numArray1 = [...num1.toString()];
+  const numArray2 = [...num2.toString()];
 
-  console.log(str1, str2);
+  // Either sort the arrays of the numbers or parse them into a parsedObj and combare the objects with each other.
+  for (let i = 0; i < numArray1.length; i++) {
+    if (!parsedNum1[numArray1[i]]) {
+      parsedNum1[numArray1[i]] = 1;
+    }
+    else {
+      parsedNum1[numArray[i]]++;
+    }
+
+    if (!parsedNum2[numArray2[i]]) {
+      parsedNum2[numArray2[i]] = 1;
+    }
+    else {
+      parsedNum2[numArray2[i]]++;
+    }
+  }
+
+  console.log(parsedNum1, parsedNum2);
+
 
 
   
