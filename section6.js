@@ -1,5 +1,7 @@
 // JS Algorithms and Data Structures Masterclass: Section 6: 100% Optional Challenges.
 
+// ---------------------------------------------------------------------------------------------------------
+
 // Coding Exercise #3:
 
 // Frequency Counter - sameFrequency
@@ -42,14 +44,14 @@ const sameFrequency = (num1, num2) => {
     }
     else {
       parsedNum1[numArray1[i]]++;
-    }
+    };
 
     if (!parsedNum2[numArray2[i]]) {
       parsedNum2[numArray2[i]] = 1;
     }
     else {
       parsedNum2[numArray2[i]]++;
-    }
+    };
   };
 
   // Compare both the objects to see if all they keys have the same value.
@@ -58,9 +60,13 @@ const sameFrequency = (num1, num2) => {
 
   // then compare the keys in that object with the other object and see if they exist in the other object and the values equal to each other as well
   return keys1.every(key => parsedNum1[key] === parsedNum2[key]);
-}
+};
 
-console.log(sameFrequency(182, 281));
-console.log(sameFrequency(34, 14));
-console.log(sameFrequency(3589578, 5879385));
-console.log(sameFrequency(22, 222));
+// console.log(sameFrequency(182, 281));
+// console.log(sameFrequency(34, 14));
+// console.log(sameFrequency(3589578, 5879385));
+// console.log(sameFrequency(22, 222));
+
+// ---------------------------------------------------------------------------------------------------------
+
+// Coding Exercise #4:
