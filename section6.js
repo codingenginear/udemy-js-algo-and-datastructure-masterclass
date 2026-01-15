@@ -23,15 +23,23 @@
 // If put into an array and sorted then just merge the array into 1 number again and check to see if it's the same number. Because it has to be exactly the same numbers if sorted from largest to smalles or smallest to largest.
 
 const sameFrequency = (num1, num2) => {
+  // Return false if numbers aren't the same length
   if (num1.length !== num2.length) return false;
-  
+
+  // create the empty parsed Obj to compare with later
   const parsedNum1 = {};
   const parsedNum2 = {};
-  
+
   // Convert numbers into string to loop over
-  for (let digit of num1)
+  const str1 = [...num1.toString()].map(Number);
+  const str2 = [...num2.toString()].map(Number);
+
+  console.log(str1, str2);
+
+
   
 
 
 }
 
+sameFrequency(182, 281);
