@@ -108,9 +108,20 @@ const areThereDuplicates = (...args) => {
     }
     else {
       parsedObj[args[i]]++
-    }
+    };
   };
 
+  const keys = Object.keys(parsedObj);
+
+  for (let key of keys) {
+    if (parsedObj[key] > 1) {
+      return true;
+    };
+  };
+
+  return false;
 };
 
-console.log(areThereDuplicates(1, 2, 3, 4, 5, 5));
+console.log(areThereDuplicates(1, 2, 3, 4, 5, 5)); // true
+console.log(areThereDuplicates(1, 2, 3, 4, 5)); // false
+console.log(areThereDuplicates('a', 'b', 'c', 'c')); // true
