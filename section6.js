@@ -23,10 +23,8 @@
 // If put into an array and sorted then just merge the array into 1 number again and check to see if it's the same number. Because it has to be exactly the same numbers if sorted from largest to smalles or smallest to largest.
 
 const sameFrequency = (num1, num2) => {
-  // Return false if numbers aren't the same length
-  if (num1.length !== num2.length) return false;
-
-  // create the empty parsed Obj to compare with later
+  
+  // Create the empty parsed Obj to compare with later
   const parsedNum1 = {};
   const parsedNum2 = {};
 
@@ -34,13 +32,16 @@ const sameFrequency = (num1, num2) => {
   const numArray1 = [...num1.toString()];
   const numArray2 = [...num2.toString()];
 
+   // Return false if numbers aren't the same length
+  if (numArray1.length !== numArray2.length) return false;
+
   // Either sort the arrays of the numbers or parse them into a parsedObj and combare the objects with each other.
   for (let i = 0; i < numArray1.length; i++) {
     if (!parsedNum1[numArray1[i]]) {
       parsedNum1[numArray1[i]] = 1;
     }
     else {
-      parsedNum1[numArray[i]]++;
+      parsedNum1[numArray1[i]]++;
     }
 
     if (!parsedNum2[numArray2[i]]) {
@@ -49,7 +50,7 @@ const sameFrequency = (num1, num2) => {
     else {
       parsedNum2[numArray2[i]]++;
     }
-  }
+  };
 
   // Compare both the objects to see if all they keys have the same value.
   // Get the keys for one of the objects
@@ -59,4 +60,7 @@ const sameFrequency = (num1, num2) => {
   return keys1.every(key => parsedNum1[key] === parsedNum2[key]);
 }
 
-console.log(sameFrequency(182, 481));
+console.log(sameFrequency(182, 281));
+console.log(sameFrequency(34, 14));
+console.log(sameFrequency(3589578, 5879385));
+console.log(sameFrequency(22, 222));
