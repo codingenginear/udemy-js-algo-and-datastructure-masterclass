@@ -52,10 +52,10 @@ const sameFrequency = (num1, num2) => {
   }
 
   // Compare both the objects to see if all they keys have the same value.
-  // Get the keys for each obj
+  // Get the keys for one of the objects
   const keys1 = Object.keys(parsedNum1);
-  const keys2 = Object.keys(parsedNum2);
 
+  // then compare the keys in that object with the other object and see if they exist in the other object and the values equal to each other as well
   return keys1.every(key => parsedNum1[key] === parsedNum2[key]);
 }
 
