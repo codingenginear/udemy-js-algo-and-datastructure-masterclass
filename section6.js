@@ -70,3 +70,47 @@ const sameFrequency = (num1, num2) => {
 // ---------------------------------------------------------------------------------------------------------
 
 // Coding Exercise #4:
+
+// Frequency Counter / Multiple Pointers - areThereDuplicates
+
+// Implement a function called, areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in.
+// You can solve this using the frequency counter pattern OR the multiple pointers pattern.
+
+// Examples:
+
+//     areThereDuplicates(1, 2, 3) // false
+//     areThereDuplicates(1, 2, 2) // true 
+//     areThereDuplicates('a', 'b', 'c', 'a') // true 
+
+// Restrictions:
+
+// Time - O(n)
+
+// Space - O(n)
+
+// Bonus:
+
+// Time - O(n log n)
+
+// Space - O(1)
+
+// Solution: My Solution
+
+// The problem says that the arguments passed in can be variable. So either use a rest operators "..." or use the arguments variable available within a non arrow fn. For today we will use the ... operator
+
+const areThereDuplicates = (...args) => {
+// Frequency Counter Pattern Solution
+  const parsedObj = {};
+
+  for (let i = 0; i < args.length; i++) {
+    if (!parsedObj[args[i]]) {
+      parsedObj[args[i]] = 1;
+    }
+    else {
+      parsedObj[args[i]]++
+    }
+  };
+
+};
+
+console.log(areThereDuplicates(1, 2, 3, 4, 5, 5));
