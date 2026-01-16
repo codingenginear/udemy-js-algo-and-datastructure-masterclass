@@ -94,34 +94,48 @@ const sameFrequency = (num1, num2) => {
 
 // Space - O(1)
 
-// Solution: My Solution
+// Solution: My Solutions
 
 // The problem says that the arguments passed in can be variable. So either use a rest operators "..." or use the arguments variable available within a non arrow fn. For today we will use the ... operator
 
 const areThereDuplicates = (...args) => {
-// Frequency Counter Pattern Solution
-  const parsedObj = {};
+  // Frequency Counter Pattern Solution O(n) time and space
+  // const parsedObj = {};
 
-  for (let i = 0; i < args.length; i++) {
-    if (!parsedObj[args[i]]) {
-      parsedObj[args[i]] = 1;
-    }
-    else {
-      parsedObj[args[i]]++
-    };
-  };
+  // for (let i = 0; i < args.length; i++) {
+  //   if (!parsedObj[args[i]]) {
+  //     parsedObj[args[i]] = 1;
+  //   }
+  //   else {
+  //     parsedObj[args[i]]++
+  //   };
+  // };
 
-  const keys = Object.keys(parsedObj);
+  // const keys = Object.keys(parsedObj);
 
-  for (let key of keys) {
-    if (parsedObj[key] > 1) {
-      return true;
-    };
-  };
+  // for (let key of keys) {
+  //   if (parsedObj[key] > 1) {
+  //     return true;
+  //   };
+  // };
 
-  return false;
+  // return false;
+
+  // Multiple Pointers Solution O(nlogn) time O(1) space complexity
+
+  if (typeof args[0] === 'string') {
+    args.sort();
+  }
+  else {
+    args.sort((a, b) => a - b);
+  }
+  
+  console.log(args);
+  const left = args[0];
+
+
 };
 
-console.log(areThereDuplicates(1, 2, 3, 4, 5, 5)); // true
-console.log(areThereDuplicates(1, 2, 3, 4, 5)); // false
-console.log(areThereDuplicates('a', 'b', 'c', 'c')); // true
+console.log(areThereDuplicates(1, 2, 4, 5, 5, 3)); // true
+console.log(areThereDuplicates(1, 3, 2, 4, 5)); // false
+console.log(areThereDuplicates('a', 'd', 'c', 'c', 'b')); // true
