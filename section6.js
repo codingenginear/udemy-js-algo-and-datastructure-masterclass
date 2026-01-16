@@ -129,11 +129,19 @@ const areThereDuplicates = (...args) => {
   else {
     args.sort((a, b) => a - b);
   }
-  
+
   console.log(args);
-  const left = args[0];
+  let start = 0;
+  let next = 1;
 
-
+  for (let i = 0; i < args.length - 1; i ++) {
+    if (args[start] === args[next]) {
+      return true;
+    }
+    start++;
+    next++;
+  }
+  return false;
 };
 
 console.log(areThereDuplicates(1, 2, 4, 5, 5, 3)); // true
