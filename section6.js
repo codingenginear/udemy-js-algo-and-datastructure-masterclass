@@ -218,5 +218,6 @@ function constructNote(message, letters) {
 console.log(constructNote('aa', 'abc')) // false
 console.log(constructNote('abc', 'dcba')) // true
 console.log(constructNote('aabbcc', 'bcabcaddff')) // true
+console.log(constructNote('aabbcc', 'bcabccaddff')) // true
 console.log(constructNote('aabbcc', '')) // true
 console.log(constructNote('', 'aaa')) // false
