@@ -144,9 +144,9 @@ const areThereDuplicates = (...args) => {
   return false;
 };
 
-console.log(areThereDuplicates(1, 2, 4, 5, 5, 3)); // true
-console.log(areThereDuplicates(1, 3, 2, 4, 5)); // false
-console.log(areThereDuplicates('a', 'd', 'c', 'c', 'b')); // true
+// console.log(areThereDuplicates(1, 2, 4, 5, 5, 3)); // true
+// console.log(areThereDuplicates(1, 3, 2, 4, 5)); // false
+// console.log(areThereDuplicates('a', 'd', 'c', 'c', 'b')); // true
 
 // ---------------------------------------------------------------------------------------------------------
 
@@ -174,17 +174,19 @@ console.log(areThereDuplicates('a', 'd', 'c', 'c', 'b')); // true
 // Solution: My Solutions
 
 function constructNote(letters, message) {
-  const parsedLetter = {};
+  const parsedLetters = {};
   const parsedMessage = {};
 
+  // Loop to parse letters
   for (let i = 0; i < letters.length; i++) {
-    if (!parsedLetter[letters[i]]) {
-      parsedLetter[letters[i]] = 1;
+    if (!parsedLetters[letters[i]]) {
+      parsedLetters[letters[i]] = 1;
     }
     else {
-      parsedLetter[letters[i]]++;
+      parsedLetters[letters[i]]++;
     };
   };
+  // Loop to parse message
   for (let i = 0; i < message.length; i++) {
     if (!parsedMessage[message[i]]) {
       parsedMessage[message[i]] = 1;
@@ -194,4 +196,9 @@ function constructNote(letters, message) {
     };
   };
 
-}
+  console.log('Letters: ', parsedLetters,'Message: ', parsedMessage);
+};
+
+console.log(constructNote('aa', 'abc')) // false
+console.log(constructNote('abc', 'dcba')) // true
+console.log(constructNote('aabbcc', 'bcabcaddff')) // true
