@@ -196,7 +196,20 @@ function constructNote(letters, message) {
     };
   };
 
-  console.log('Letters: ', parsedLetters,'Message: ', parsedMessage);
+  // get letter keys - because we are checking to see if the letters are contained within the message so we need to loop through all it's keys
+  let letterKeys = Object.keys(parsedLetters);
+  console.log('Letters: ', parsedLetters, 'Message: ', parsedMessage);
+
+  // Check to see if any of the letters do not extist in the message. If they don't return false. However if they all exist then return true.
+  for (let key of letterKeys) {
+    if (parsedLetters[key] !== parsedMessage[key]) { 
+      return false;
+    }
+    else {
+      return true
+    };
+  };
+
 };
 
 console.log(constructNote('aa', 'abc')) // false
