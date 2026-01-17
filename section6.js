@@ -173,9 +173,13 @@ const areThereDuplicates = (...args) => {
 
 // Solution: My Solutions
 
-function constructNote(letters, message) {
-  const parsedLetters = {};
+function constructNote(message, letters) {
   const parsedMessage = {};
+  const parsedLetters = {};
+
+  // No message return true
+  if (!message) return true;
+  if (!letters) return false;
 
   // Loop to parse letters
   for (let i = 0; i < letters.length; i++) {
@@ -198,20 +202,21 @@ function constructNote(letters, message) {
 
   // get letter keys - because we are checking to see if the letters are contained within the message so we need to loop through all it's keys
   let letterKeys = Object.keys(parsedLetters);
-  console.log('Letters: ', parsedLetters, 'Message: ', parsedMessage);
+  console.log('Letters: ', parsedLetters, 'Message: ', parsedMessage, 'Letter Keys: ', letterKeys);
 
-  // Check to see if any of the letters do not extist in the message. If they don't return false. However if they all exist then return true.
+  // Check to see if any of the letters do not exist in the message. If they don't return false. However if they all exist then return true.
   for (let key of letterKeys) {
-    if (parsedLetters[key] !== parsedMessage[key]) { 
+    if (parsedLetters[key] < parsedMessage[key]) { 
       return false;
     }
     else {
       return true
     };
   };
-
 };
 
 console.log(constructNote('aa', 'abc')) // false
 console.log(constructNote('abc', 'dcba')) // true
 console.log(constructNote('aabbcc', 'bcabcaddff')) // true
+console.log(constructNote('aabbcc', '')) // true
+console.log(constructNote('', 'aaa')) // false
