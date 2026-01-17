@@ -147,3 +147,51 @@ const areThereDuplicates = (...args) => {
 console.log(areThereDuplicates(1, 2, 4, 5, 5, 3)); // true
 console.log(areThereDuplicates(1, 3, 2, 4, 5)); // false
 console.log(areThereDuplicates('a', 'd', 'c', 'c', 'b')); // true
+
+// ---------------------------------------------------------------------------------------------------------
+
+// Coding Exercise #5:
+// Frequency Counter - constructNote
+
+// Write a function called constructNote, which accepts two strings, a message and some letters. The function should return true if the message can be built with the letters that you are given, or it should return false.
+
+// Assume that there are only lowercase letters and no space or special characters in both the message and the letters.
+
+// Bonus Constraints:
+
+// If M is the length of message and N is the length of letters:
+
+// Time Complexity: O(M+N)
+
+// Space Complexity: O(N)
+
+// Examples:
+
+//     constructNote('aa', 'abc') // false
+//     constructNote('abc', 'dcba') // true
+//     constructNote('aabbcc', 'bcabcaddff') // true
+
+// Solution: My Solutions
+
+function constructNote(letters, message) {
+  const parsedLetter = {};
+  const parsedMessage = {};
+
+  for (let i = 0; i < letters.length; i++) {
+    if (!parsedLetter[letters[i]]) {
+      parsedLetter[letters[i]] = 1;
+    }
+    else {
+      parsedLetter[letters[i]]++;
+    };
+  };
+  for (let i = 0; i < message.length; i++) {
+    if (!parsedMessage[message[i]]) {
+      parsedMessage[message[i]] = 1;
+    }
+    else {
+      parsedMessage[message[i]]++;
+    };
+  };
+
+}
