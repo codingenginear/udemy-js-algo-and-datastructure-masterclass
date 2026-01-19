@@ -215,6 +215,24 @@ function constructNote(message, letters) {
   };
 };
 
+
+// Bonus Solution O(n+m) Time Complexity and O(n) Space Complexity
+ function constructNote(message, letters){
+  var lettersObj = {};
+
+  for (let s of letters) {
+    if(s in lettersObj) lettersObj[s]++;
+    else lettersObj[s] = 1;
+  }
+
+  for (let s of message) {
+    if(!lettersObj[s]) return false;
+      lettersObj[s]--;
+  }
+
+  return true;
+};
+
 console.log(constructNote('aa', 'abc')) // false
 console.log(constructNote('abc', 'dcba')) // true
 console.log(constructNote('aabbcc', 'bcabcaddff')) // true
