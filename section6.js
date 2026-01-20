@@ -262,16 +262,25 @@ function constructNote(message, letters) {
 
 const findAllDuplicates = (array) => {
   const parsedObj = {};
-
+  const duplicateArray = [];
+  
   for (let i = 0; i < array.length; i++) {
-    if (parsedArray[i]) {
-      parsedArray[i]++;
+    if (parsedObj[array[i]]) {
+      parsedObj[array[i]]++;
     }
     else {
-      parsedArray[i] = 1;
+      parsedObj[array[i]] = 1;
     };
   }
   console.log(parsedObj);
+
+  for (let key in parsedObj) {
+    if (parsedObj[key] === 2) {
+      duplicateArray.push(Number(key));
+    }
+  };
+
+  return duplicateArray;
 };
 
 console.log(findAllDuplicates([4, 3, 2, 7, 8, 2, 3, 1])); // array with 2 and 3
