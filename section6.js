@@ -256,8 +256,12 @@ function constructNote(message, letters) {
 
 // Solution: My Solution
 
+// First: Loop through the array and create a frequency counter object (parse the array)
+// Second: Push/Add the items of the array which has a frequency of 2 (in the parsedObj) (into a new array
+// Third: Return the new array with only duplicates inside of it
+
 const findAllDuplicates = (array) => {
-  const parsedArray = {};
+  const parsedObj = {};
 
   for (let i = 0; i < array.length; i++) {
     if (parsedArray[i]) {
@@ -266,10 +270,8 @@ const findAllDuplicates = (array) => {
     else {
       parsedArray[i] = 1;
     };
-    console.log(parsedArray);
   }
-
-
+  console.log(parsedObj);
 };
 
 console.log(findAllDuplicates([4, 3, 2, 7, 8, 2, 3, 1])); // array with 2 and 3
