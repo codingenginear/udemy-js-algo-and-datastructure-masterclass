@@ -283,9 +283,9 @@ const findAllDuplicates = (array) => {
   return duplicateArray;
 };
 
-console.log(findAllDuplicates([4, 3, 2, 7, 8, 2, 3, 1])); // array with 2 and 3
-console.log(findAllDuplicates([4, 3, 2, 1, 0])); // []
-console.log(findAllDuplicates([4, 3, 2, 1, 0, 1, 2, 3])); // array with 3, 2, and 1
+// console.log(findAllDuplicates([4, 3, 2, 7, 8, 2, 3, 1])); // array with 2 and 3
+// console.log(findAllDuplicates([4, 3, 2, 1, 0])); // []
+// console.log(findAllDuplicates([4, 3, 2, 1, 0, 1, 2, 3])); // array with 3, 2, and 1
 
 // ---------------------------------------------------------------------------------------------------------
 
@@ -310,15 +310,18 @@ console.log(findAllDuplicates([4, 3, 2, 1, 0, 1, 2, 3])); // array with 3, 2, an
 
 const averagePair = (array, avg) => {
   let firstAddend = 0;
-  let secondAddend = 1;
+  let secondAddend = 1; 
 
+  if (array.length === 0) return false;
+  
   while (firstAddend < array.length) {
+    console.log('First Addend and array[firstAddend]: ', firstAddend, array[firstAddend], 'Second Addend Index and array[secondAddend]: ', secondAddend, array[secondAddend]);
     if (sumAvg(array[firstAddend], array[secondAddend]) !== avg && secondAddend < array.length) {
       secondAddend++;
     }
-    else if (sumAvg(array[firstAddend], array[secondAddend]) !== avg && secondAddend === array.length - 1) {
+    else if (sumAvg(array[firstAddend], array[secondAddend]) !== avg && secondAddend === array.length) {
       firstAddend++;
-      secondAddend = firstAddent + 1;
+      secondAddend = firstAddend + 1;
     }
     else if (sumAvg(array[firstAddend], array[secondAddend]) === avg) {
       return true;
@@ -332,10 +335,12 @@ const sumAvg = (numOne, numTwo) => {
   let avg = (numOne + numTwo) / 2;
 
   return avg;
-}
+};
 
 
-    averagePair([1,2,3],2.5) // true
-    averagePair([1,3,3,5,6,7,10,12,19],8) // true
-    averagePair([-1,0,3,4,5,6], 4.1) // false
-    averagePair([],4) // false
+
+
+console.log(averagePair([1, 2, 3], 2.5)); // true
+console.log(averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8)); // true
+console.log(averagePair([-1, 0, 3, 4, 5, 6], 4.1)); // false
+console.log(averagePair([], 4)); // false
