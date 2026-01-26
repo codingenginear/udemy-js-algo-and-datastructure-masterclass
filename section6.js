@@ -100,6 +100,7 @@ const sameFrequency = (num1, num2) => {
 
 const areThereDuplicates = (...args) => {
   // Frequency Counter Pattern Solution O(n) time and space
+
   // const parsedObj = {};
 
   // for (let i = 0; i < args.length; i++) {
@@ -352,8 +353,6 @@ const sumAvg = (numOne, numTwo) => {
 //     }
 //     return false;
 // }
-
-
 
 // console.log(averagePair([1, 2, 3], 2.5)); // true
 // console.log(averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8)); // true
