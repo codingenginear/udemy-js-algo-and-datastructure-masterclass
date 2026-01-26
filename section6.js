@@ -309,10 +309,33 @@ console.log(findAllDuplicates([4, 3, 2, 1, 0, 1, 2, 3])); // array with 3, 2, an
 //     averagePair([],4) // false
 
 const averagePair = (array, avg) => {
-  let curravg = undefined;
+  let firstAddend = 0;
+  let secondAddend = 1;
 
-  for (let i = 0; i < array.length; i++) {
-    
-  }
+  while (firstAddend < array.length) {
+    if (sumAvg(array[firstAddend], array[secondAddend]) !== avg && secondAddend < array.length) {
+      secondAddend++;
+    }
+    else if (sumAvg(array[firstAddend], array[secondAddend]) !== avg && secondAddend === array.length - 1) {
+      firstAddend++;
+      secondAddend = firstAddent + 1;
+    }
+    else if (sumAvg(array[firstAddend], array[secondAddend]) === avg) {
+      return true;
+    };
+  };
 
+  return false;
+};
+
+const sumAvg = (numOne, numTwo) => {
+  let avg = (numOne + numTwo) / 2;
+
+  return avg;
 }
+
+
+    averagePair([1,2,3],2.5) // true
+    averagePair([1,3,3,5,6,7,10,12,19],8) // true
+    averagePair([-1,0,3,4,5,6], 4.1) // false
+    averagePair([],4) // false
