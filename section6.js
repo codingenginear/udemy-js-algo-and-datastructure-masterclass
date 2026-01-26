@@ -308,6 +308,8 @@ const findAllDuplicates = (array) => {
 //     averagePair([-1,0,3,4,5,6], 4.1) // false
 //     averagePair([],4) // false
 
+// Solution: My Solution
+
 const averagePair = (array, avg) => {
   let firstAddend = 0;
   let secondAddend = 1; 
@@ -337,6 +339,19 @@ const sumAvg = (numOne, numTwo) => {
   return avg;
 };
 
+// Solution: Student Solution in lecture comments
+// function averagePair(arr, num){
+//     const computeAvg = (a,b) => (arr[a] + arr[b]) / 2;
+//     let i = 0;
+//     let j = arr.length - 1;
+//     while (i < j) {
+//         let avg = computeAvg(i,j);
+//         if (avg === num) return true;
+//         (avg > num) && j--;
+//         (avg < num) && i++;
+//     }
+//     return false;
+// }
 
 
 
