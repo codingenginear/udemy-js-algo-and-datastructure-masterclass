@@ -383,3 +383,15 @@ console.log(averagePair([], 4)); // false
 
 // My Solution: 
 
+const isSubsequence = (subString, string ) => {
+  let j = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === subString[j]) {
+      j++;
+    }
+  }
+
+  console.log(j);
+}
+
