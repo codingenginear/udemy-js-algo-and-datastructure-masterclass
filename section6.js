@@ -341,6 +341,7 @@ const sumAvg = (numOne, numTwo) => {
 };
 
 // Solution: Student Solution in lecture comments
+
 // function averagePair(arr, num){
 //     const computeAvg = (a,b) => (arr[a] + arr[b]) / 2;
 //     let i = 0;
@@ -358,3 +359,27 @@ const sumAvg = (numOne, numTwo) => {
 // console.log(averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8)); // true
 // console.log(averagePair([-1, 0, 3, 4, 5, 6], 4.1)); // false
 console.log(averagePair([], 4)); // false
+
+// ---------------------------------------------------------------------------------------------------------
+
+// Coding Exercise #8: Multiple Pointers - isSubsequence
+
+// Multiple Pointers - isSubsequence
+
+// Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string form a subsequence of the characters in the second string. In other words, the function should check whether the characters in the first string appear somewhere in the second string, without their order changing.
+
+// Examples:
+
+//     isSubsequence('hello', 'hello world'); // true
+//     isSubsequence('sing', 'sting'); // true
+//     isSubsequence('abc', 'abracadabra'); // true
+//     isSubsequence('abc', 'acb'); // false (order matters)
+
+// Your solution MUST have AT LEAST the following complexities:
+
+// Time Complexity - O(N + M)
+
+// Space Complexity - O(1)
+
+// My Solution: 
+
