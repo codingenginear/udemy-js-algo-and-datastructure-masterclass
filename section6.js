@@ -433,3 +433,15 @@ const isSubsequence = (subString, string ) => {
 // Time Complexity Requirement - O(n log n)
 
 // Space Complexity Requirement - O(1)
+
+// My Solution: 
+// Pseudocode: 
+// Because we have 2 of the values. First: the value that will be subtracted from. Second: The value that the difference of the two values would equal aka the target value. 
+// This means once we loop through the array, for each value in the array there can only be one answer. 
+// Therefore we can loop through the array and for each value we will check if the second value that would equal the target value exists in the array or not. If not return false if yes return true. 
+// E.g. if they give us an array ([1, 2, 3, 4], 1) when we loop through the array we check to see if (1, 2, 3, or 4) - 1 (the target value) is available in the array. in this case yes 4 - 1 = 3 || 3 - 1 = 2 || 2 - 1 = 1. Which are all in the array.
+
+// Frequency Counter Solution
+const findPair = (array, target) => {
+  
+};
