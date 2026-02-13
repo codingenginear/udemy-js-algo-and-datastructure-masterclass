@@ -455,11 +455,14 @@ const findPair = (array, target) => {
   }
 
   for (let i = 0; i < array.length; i++) {
-    if (parsedObj[array[i] - target]) {
+    if (parsedObj[array[i]] === 2 && target === 0) {
+      return true;
+    }
+    if (parsedObj[array[i] - target] && target !== 0) {
       return true;
     }
   };
-  
+
   return false;
 };
 
