@@ -507,6 +507,7 @@ const maxSubarraySum = (array, num) => {
   let highestNum = 0;
   let currentNum = 0;
 
+  if (array.length < num) return null;
 
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < num; j++) {
