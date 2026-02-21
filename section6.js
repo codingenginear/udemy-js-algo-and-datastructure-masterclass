@@ -502,6 +502,7 @@ const findPair = (array, target) => {
 // Space Complexity - O(1)
 
 //  My Solution: 
+// Solution 1: Apparently this is O(n * l) and is not O(n) - I need to fix this so i am subtracting the previous element in array as window moves and adding the next element in array as window moves. That would be O(n).
 
 const maxSubarraySum = (array, num) => {
   let highestNum = 0;
@@ -543,14 +544,24 @@ const maxSubarraySum = (array, num) => {
 // This function should return the minimal length of a contiguous subarray of which the sum is greater than or equal to the integer passed to the function. If there isn't one, return 0 instead.
 // Examples:
 
-//     minSubArrayLen([2,3,1,2,4,3], 7) // 2 -> because [4,3] is the smallest subarray
-//     minSubArrayLen([2,1,6,5,4], 9) // 2 -> because [5,4] is the smallest subarray
-//     minSubArrayLen([3,1,7,11,2,9,8,21,62,33,19], 52) // 1 -> because [62] is greater than 52
-//     minSubArrayLen([1,4,16,22,5,7,8,9,10],39) // 3
-//     minSubArrayLen([1,4,16,22,5,7,8,9,10],55) // 5
+//     minSubArrayLen([2, 3, 1, 2, 4, 3], 7) // 2 -> because [4,3] is the smallest subarray
+//     minSubArrayLen([2, 1, 6, 5, 4], 9) // 2 -> because [5,4] is the smallest subarray
+//     minSubArrayLen([3, 1, 7, 11, 2, 9, 8, 21, 62, 33, 19], 52) // 1 -> because [62] is greater than 52
+//     minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 39) // 3
+//     minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 55) // 5
 //     minSubArrayLen([4, 3, 3, 8, 1, 2, 3], 11) // 2
-//     minSubArrayLen([1,4,16,22,5,7,8,9,10],95) // 0
+//     minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 95) // 0
 
 // Time Complexity - O(n)
 
 // Space Complexity - O(1)
+
+// Pseudocode: 
+// Iterate over whole array with i.
+// Then use j to iterate over sub array.
+// If you find a sub array that equals to or is greater than the integer add that sub array to a variable outside of loop and end iteration of j.
+// Increment i and repeat to try to find more sub arrays and compare with the saved array to see if you can land the same result with a smaller array.
+// If you can find a smaller array switch the saved array for the smaller array. 
+// If not return the smaller array.
+
+// After some research this pseudocode above is O(n^2) I need to use sliding window pattern so it is O(n).
