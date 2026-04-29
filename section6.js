@@ -564,5 +564,6 @@ const maxSubarraySum = (array, num) => {
 // If you can find a smaller array switch the saved array for the smaller array. 
 // If not return the smaller array.
 
+
 // After some research the pseudocode above is O(n^2) I need to use sliding window pattern so it is O(n).
 
