@@ -566,9 +566,17 @@ const maxSubarraySum = (array, num) => {
 
 // After some research the pseudocode above is O(n^2) I need to use sliding window pattern so it is O(n).
 
-//
+// Pseudocode for O(n) solution:
+// NOTE: Because we are trying to find the minimum length sub array in which the sum of equals the integer, we will have to start with an array of the length of 1, 
+// and we will keep iterating on the length of the array if the sum of the array doesn't equal the integer 
+// First create a variable called minSubArrayLen and assign it the smallest length possible, because we are checking for the smallest length sub array first which = 1
+// Then we iterate over the array using the subArrayLen Variable
 
 const minSubArrayLen = (array, sumOfMinSubArray) => {
+  let minSubArrayLen = 1;
+  
+
+
 
 
 };
