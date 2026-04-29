@@ -571,19 +571,14 @@ const maxSubarraySum = (array, num) => {
 // First create a variable called minSubArrayLen and assign it the smallest length possible, because we are checking for the smallest length sub array first which = 1
 // Then we iterate over the array using the minSubArrayLen variable to see if we can find the sumOfMinSubArray with the current length of minSubArrayLen if not we add 1 to minSubArrayLen
 
-const minSubArrayLen = (array, sumOfMinSubArray) => {
+const minSubArrayLen = (array, minSubArraySum) => {
   let minSubArrayLen = 1;
-  for (let i = 0; i < array.length; i ++) {
-    if (array[i] === sumOfMinSubArray) {
-      return minSubArrayLen;
-    }
-    else {
-      minSubArrayLen + 1;
-    }
-  };
+  let sum = 0;
+  let tempsum = 0;
 
-  let sum;
-  
+  // Check to see if sum is not equal or is less than minSubArraySum return 0 if that is the case. Because Sum either has to be equal or larger than minSubArraySum.  
+  if (sum !== minSubArraySum || sum < minSubArraySum) return 0;
+
 
 
 
@@ -594,7 +589,7 @@ const minSubArrayLen = (array, sumOfMinSubArray) => {
 
 };
 
-console.log(minSubArrayLen([2, 3, 1, 2, 4, 3, 7], 7)); // 2 -> because [4,3] is the smallest subarray
+console.log(minSubArrayLen([2, 3, 1, 2, 4, 3], 7)); // 2 -> because [4,3] is the smallest subarray
 
 
 
