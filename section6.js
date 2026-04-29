@@ -564,6 +564,16 @@ const maxSubarraySum = (array, num) => {
 // If you can find a smaller array switch the saved array for the smaller array. 
 // If not return the smaller array.
 
-
 // After some research the pseudocode above is O(n^2) I need to use sliding window pattern so it is O(n).
+
+//
+
+const minSubArrayLen = (array, sumOfMinSubArray) => {
+
+
+};
+
+minSubArrayLen([2, 3, 1, 2, 4, 3], 7) // 2 -> because [4,3] is the smallest subarray
+
+
 
