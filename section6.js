@@ -583,7 +583,7 @@ const minSubArrayLen = (array, targetSum) => {
   let minLength = Infinity;
 
   
-  while (start < array.length) {
+  while (left < array.length) {
     if (sum < targetSum && right < array.length) {
       sum = sum + array[right];
       right++;
@@ -593,11 +593,16 @@ const minSubArrayLen = (array, targetSum) => {
       sum = sum - array[left];
       left++;
     }
+    else {
+      break;
+    }
   }
+
+  return minLength === Infinity ? 0 : minLength;
 
 };
 
-//                         l            r
+//                                      l  r
 console.log(minSubArrayLen([2, 3, 1, 2, 4, 3], 7)); // 2 -> because [4,3] is the smallest subarray
 
 // Initializaiton
@@ -629,3 +634,57 @@ console.log(minSubArrayLen([2, 3, 1, 2, 4, 3], 7)); // 2 -> because [4,3] is the
 // right = 4
 // left = 0
 // minLength = Infinity;
+
+// Iteration = 5
+// sum = 6 
+// right = 4
+// left = 1
+// minLength = 4;
+
+// Iteration = 6
+// sum = 10 
+// right = 5
+// left = 1
+// minLength = 4;
+
+// Iteration = 7
+// sum = 10 
+// right = 5
+// left = 1
+// minLength = 4;
+
+// Iteration = 8
+// sum = 7 
+// right = 5
+// left = 2
+// minLength = 4;
+
+// Iteration = 8
+// sum = 6 
+// right = 5
+// left = 3
+// minLength = 3;
+
+// Iteration = 9
+// sum = 9 
+// right = 6
+// left = 3
+// minLength = 3;
+
+// Iteration = 10
+// sum = 7 
+// right = 6
+// left = 4
+// minLength = 3;
+
+// Iteration = 11
+// sum = 3 
+// right = 6
+// left = 5
+// minLength = 2;
+
+// Iteration = 12
+// sum = 3 
+// right = 6
+// left = 5
+// minLength = 2;
