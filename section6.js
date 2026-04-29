@@ -574,7 +574,12 @@ const maxSubarraySum = (array, num) => {
 const minSubArrayLen = (array, sumOfMinSubArray) => {
   let minSubArrayLen = 1;
   for (let i = 0; i < array.length; i ++) {
-    if (array[i] === sumOfMinSubArray) return minSubArrayLen;
+    if (array[i] === sumOfMinSubArray) {
+      return minSubArrayLen;
+    }
+    else {
+      minSubArrayLen + 1;
+    }
   };
 
   let sum;
