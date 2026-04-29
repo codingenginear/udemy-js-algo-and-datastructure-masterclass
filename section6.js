@@ -553,7 +553,6 @@ const maxSubarraySum = (array, num) => {
 //     minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 95) // 0
 
 // Time Complexity - O(n)
-
 // Space Complexity - O(1)
 
 // Pseudocode: 
@@ -570,18 +569,27 @@ const maxSubarraySum = (array, num) => {
 // NOTE: Because we are trying to find the minimum length sub array in which the sum of equals the integer, we will have to start with an array of the length of 1, 
 // and we will keep iterating on the length of the array if the sum of the array doesn't equal the integer 
 // First create a variable called minSubArrayLen and assign it the smallest length possible, because we are checking for the smallest length sub array first which = 1
-// Then we iterate over the array using the subArrayLen Variable
+// Then we iterate over the array using the minSubArrayLen variable to see if we can find the sumOfMinSubArray with the current length of minSubArrayLen if not we add 1 to minSubArrayLen
 
 const minSubArrayLen = (array, sumOfMinSubArray) => {
   let minSubArrayLen = 1;
+  for (let i = 0; i < array.length; i ++) {
+    if (array[i] === sumOfMinSubArray) return minSubArrayLen;
+  };
+
+  let sum;
   
+
+
+
+
 
 
 
 
 };
 
-minSubArrayLen([2, 3, 1, 2, 4, 3], 7) // 2 -> because [4,3] is the smallest subarray
+console.log(minSubArrayLen([2, 3, 1, 2, 4, 3, 7], 7)); // 2 -> because [4,3] is the smallest subarray
 
 
 
