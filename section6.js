@@ -571,23 +571,17 @@ const maxSubarraySum = (array, num) => {
 // First create a variable called minSubArrayLen and assign it the smallest length possible, because we are checking for the smallest length sub array first which = 1
 // Then we iterate over the array using the minSubArrayLen variable to see if we can find the sumOfMinSubArray with the current length of minSubArrayLen if not we add 1 to minSubArrayLen
 
-const minSubArrayLen = (array, minSubArraySum) => {
-  let minSubArrayLen = 1;
+// The above pseudocode leads to O(n^2) time complexity as well. After doing some research with google ai i realized i need to do the dynamic sliding window pattern where i use multiple pointers 
+// and I create 2 pointers in the beginning. I increase the right window pointer until the sum of everything between right window and left window equal the target sum 
+// then increase the left window to shorten the window size until i reach a point where the window is at it's smallest but the sum of the window still equals the target sum. like an inch worm or an accordian.
+// Will try this method now. 
+
+const minSubArrayLen = (array, targetSum) => {
   let sum = 0;
-  let tempsum = 0;
-
-  // Check to see if sum is not equal or is less than minSubArraySum return 0 if that is the case. Because Sum either has to be equal or larger than minSubArraySum.  
-  if (sum !== minSubArraySum || sum < minSubArraySum) return 0;
-
-
-
-
-
-
-
 
 
 };
+
 
 console.log(minSubArrayLen([2, 3, 1, 2, 4, 3], 7)); // 2 -> because [4,3] is the smallest subarray
 
