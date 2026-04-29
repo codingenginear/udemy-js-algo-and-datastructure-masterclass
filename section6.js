@@ -578,7 +578,13 @@ const maxSubarraySum = (array, num) => {
 
 const minSubArrayLen = (array, targetSum) => {
   let sum = 0;
+  let right = 0;
+  let left = 0;
+  let minLength = Infinity;
 
+  while (start < array.length) {
+    
+  }
 
 };
 
