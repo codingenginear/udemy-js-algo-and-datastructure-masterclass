@@ -713,4 +713,11 @@ const minSubArrayLen = (array, targetSum) => {
 
 // Time Complexity - O(n)
 
-// 
+// Pseudocode:
+// First create 2 variable for 2 pointers
+// Then create a longest subString variable to store the longest current substring.
+// Then move the end pointer to the right checking the next letter with the previous letters
+// Once a duplicate is found store the length of the current all distinct substring in a variable
+// Then move the start pointer right until the duplicate no longer exists
+// Then if the next substring with all distinct characters is larger then the first update the longest substring length value, if not keep repeating this process until there is a longer substring or you end variable reaches the end of the array.
+// return the longest substring value. 
