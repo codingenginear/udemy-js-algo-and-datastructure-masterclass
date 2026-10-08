@@ -716,8 +716,13 @@ const minSubArrayLen = (array, targetSum) => {
 // Pseudocode:
 // First create 2 variable for 2 pointers
 // Then create a longest subString variable to store the longest current substring.
-// Then move the end pointer to the right checking the next letter with the previous letters
-// Once a duplicate is found store the length of the current all distinct substring in a variable
-// Then move the start pointer right until the duplicate no longer exists
-// Then if the next substring with all distinct characters is larger then the first update the longest substring length value, if not keep repeating this process until there is a longer substring or you end variable reaches the end of the array.
-// return the longest substring value. 
+// Then create a current substring folder to store the current substring you are looking at to be able to compare the curr substring for unique characters before deciding if it's longer than longest substring
+// Create a lead and a follow variable to manage the pointers
+// Then move the lead pointer to the right and check the current substring between lead and follow pointers for a duplicate
+// until no duplicate keep moving lead pointer to the right to find the longest substring you can before you find a duplicate
+// Once a duplicate is found store the length of the current sub string you have with all distinct letters in the longest substring variable
+// Then move the follow pointer variable right and check the new substring to see if it still has the lead pointers letter
+// If the lead substring letter is still in the curr substring after moving follow pointer right means the duplicate still exists. Keep moving the follow pointer right until duplicate no longer exists.
+// Once duplicate no longer exists move right pointer again
+// Then if the next substring with all distinct characters is larger then the first update the longest substring length value, if not keep repeating this process until there is a longer substring or your lead variable reaches the end of the array.
+// Return the longest substring's length. 
