@@ -726,3 +726,10 @@ const minSubArrayLen = (array, targetSum) => {
 // Once duplicate no longer exists move right pointer again
 // Then if the next substring with all distinct characters is larger then the first update the longest substring length value, if not keep repeating this process until there is a longer substring or your lead variable reaches the end of the array.
 // Return the longest substring's length. 
+
+// Attempt 1
+
+const findLongestSubstring = (string) => {
+  
+
+}
