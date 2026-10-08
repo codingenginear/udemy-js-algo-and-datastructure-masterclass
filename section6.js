@@ -730,6 +730,12 @@ const minSubArrayLen = (array, targetSum) => {
 // Attempt 1
 
 const findLongestSubstring = (string) => {
-  
+  const longestSubstring = '';
+  const currentSubstring = '';
+  const leadPointer = 0;
+  const followPointer = 0;
 
-}
+  while (leadPointer < string.length) {
+
+  };
+};
