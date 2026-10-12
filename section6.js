@@ -736,6 +736,7 @@ const findLongestSubstring = (string) => {
   const followPointer = 0;
 
   while (leadPointer < string.length) {
+
     if (leadPointer < string.length) {
       currentSubstring = string.slice(followPointer, leadPointer + 1);
       if (!currentSubstring.includes(string[leadPointer]) && currentSubstring > longestSubstring) {
@@ -748,4 +749,5 @@ const findLongestSubstring = (string) => {
     };
     return longestSubstring.length;
   };
+  
 };
