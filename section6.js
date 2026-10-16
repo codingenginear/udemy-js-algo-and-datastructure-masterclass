@@ -677,6 +677,7 @@ const minSubArrayLen = (array, targetSum) => {
 // left = 3
 // minLength = 3;
 
+
 // Iteration = 10
 // sum = 7 
 // right = 6
